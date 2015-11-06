@@ -19,27 +19,28 @@ var server = http.createServer(function(req, res){
       break;
 		case 'sentence':
 			var sentence = params[2].replace(/%/g, ' ');
-		console.log(superCounter(sentence));
+			res.write(`${superCounter(sentence)`);
+			res.end();
 			break;
-			case 'cube':
-	      var num = params[2];
-	      res.write(num + ' cubed is ' + Math.pow(num, 3) + '\n');
-	      res.end();
-	      break;
-			case 'square':
-	      var num = params[2];
-	      res.write(num + ' squared is ' + Math.pow(num, 2) + '\n');
-	      res.end();
-	      break;
-			case 'sum':
-				var nums = params.slice(2);
-				var sum = _.sum(nums);
-				res.write(`the sum is ${sum} \n`)
-		      res.end();
-		      break;
+		case 'cube':
+			 var num = params[2];
+			 res.write(num + ' cubed is ' + Math.pow(num, 3) + '\n');
+			 res.end();
+			 break;
+		case 'square':
+			  var num = params[2];
+			  res.write(num + ' squared is ' + Math.pow(num, 2) + '\n');
+			  res.end();
+			  break;
+		case 'sum':
+			  var nums = params.slice(2);
+			  var sum = _.sum(nums);
+			  res.write(`the sum is ${sum} \n`)
+		      	  res.end();
+		      	  break;
 		default:
-			res.write(`That is not a recgonizable route \n`)
-	res.end();
+			  res.write(`That is not a recgonizable route \n`)
+			  res.end();
 }
 });
 	server.listen(port);
