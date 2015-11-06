@@ -38,7 +38,7 @@ var server = http.createServer(function(req, res){
 		      res.end();
 		      break;
 		default:
-			console.log("WHYYYYYYYYY")
+			res.write(`That is not a recgonizable route \n`)
 	res.end();
 }
 });
